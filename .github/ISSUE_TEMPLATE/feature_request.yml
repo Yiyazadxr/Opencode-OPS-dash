@@ -1,0 +1,30 @@
+name: 功能建议 / Feature request
+description: 新面板、指标、交互或兼容性改进
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        项目有几条硬约束：桥接只读、页面零外部请求、零 npm 依赖、单文件无构建。
+        与约束冲突的建议可能需要先讨论取舍。You can also write in English.
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题 / The problem
+      description: 现在的体验是什么样，哪里不够用
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望的效果 / Proposed solution
+      description: 如果涉及新的上游接口，请说明它是否为只读
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考虑过的替代方案 / Alternatives considered（可选 / optional）
+    validations:
+      required: false

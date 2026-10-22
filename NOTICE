@@ -1,0 +1,134 @@
+NOTICE
+======
+
+opencode-OPS-dash - Live ops dashboard for OpenCode
+(repository: opencode-OPS-dash, https://github.com/Yiyazadxr/opencode-OPS-dash)
+Copyright (c) 2026-present Yiyazadxr
+Contact: 412110785@qq.com
+
+This NOTICE describes the repository's licensing scope, the third-party work
+the dashboard is adapted from, the fonts embedded in the page, the runtime
+dependencies that are not redistributed, and the brand restrictions. It is
+informational. It does not modify the MIT License in LICENSE, except to
+identify materials that are NOT licensed under MIT.
+
+--------------------------------------------------------------------------------
+1. Scope of licensing
+--------------------------------------------------------------------------------
+
+This repository contains materials under different licenses:
+
+- Source code (all files except those listed below): MIT License, see LICENSE.
+- Brand names, logos and brand assets: NOT licensed. See section 5.
+- Adapted third-party work: licensed by its respective author. See section 2.
+- Embedded font files: licensed by their respective authors. See section 3.
+- Runtime dependencies: licensed by their respective authors, and not included
+  in this repository. See section 4.
+
+If there is any conflict between this NOTICE and the LICENSE file regarding the
+source code, the LICENSE file governs the source code.
+
+--------------------------------------------------------------------------------
+2. Adapted third-party work
+--------------------------------------------------------------------------------
+
+The OPS theme visuals and interaction design of opencode-dash.html are adapted
+from the following project:
+
+- agent-display - MIT License - Copyright (c) cyberdaddyleo -
+  https://github.com/cyberdaddyleo/agent-display
+
+The adaptation keeps the original copyright and license notice, as required by
+the MIT License, and the relationship is stated in the README credits and in the
+attribution line rendered in the page footer.
+
+What was adapted: the OPS paper-engineering theme - the dispatch flywheel, the
+rotating band with data blocks, the convergence nodes, the four bottom panels
+and the paper / fluorescent colour scheme.
+
+What was rewritten: the entire data layer. The original page drives everything
+from an in-page simulator that generates sample metrics; this project replaces
+it with a local read-only bridge that reads live activity from a running
+OpenCode instance (sessions, tool calls, steps, token usage and cost). The
+bridge, the single-file page, the launcher and the documentation in this
+repository are original work.
+
+No code, data or asset is copied verbatim from the upstream project beyond the
+visual and interaction design described above.
+
+--------------------------------------------------------------------------------
+3. Embedded fonts
+--------------------------------------------------------------------------------
+
+The dashboard embeds the following font subsets as base64 data URIs inside
+opencode-dash.html, so the page loads no external resource at runtime:
+
+- Archivo (display face, wght 800 and 900) - SIL Open Font License 1.1 -
+  Copyright (c) Omnibus-Type - https://github.com/Omnibus-Type/Archivo
+- JetBrains Mono (data face, wght 400, 500 and 700) -
+  SIL Open Font License 1.1 - Copyright (c) JetBrains -
+  https://www.jetbrains.com/lp/mono/
+
+The SIL Open Font License 1.1 permits bundling the font files with the software,
+including embedding them in a web page. The copyright and license notices inside
+each font file are retained unchanged.
+
+CJK glyphs are not embedded. They are rendered with the fonts provided by the
+operating system (Microsoft YaHei, PingFang SC, or the system UI font), which
+are not distributed with this repository.
+
+--------------------------------------------------------------------------------
+4. Runtime dependencies
+--------------------------------------------------------------------------------
+
+The following are required at runtime and are NOT included in this repository:
+
+- OpenCode - MIT License - https://opencode.ai
+- Node.js - MIT License - https://nodejs.org
+
+The bridge talks to the OpenCode HTTP API of a locally running instance. It
+does not include, modify or redistribute any OpenCode code. The project
+introduces no npm package: it uses only the Node.js standard library.
+
+--------------------------------------------------------------------------------
+5. Trademark and brand usage
+--------------------------------------------------------------------------------
+
+The MIT License grants rights to the source code only. It does NOT grant rights
+to use the project's names, branding, or logos.
+
+The following trademarks and brand identifiers belong to their respective
+owners and are expressly excluded from the licenses above:
+
+- "opencode-OPS-dash"
+- "OpenCode" and the OpenCode name and logo, which belong to the OpenCode
+  project and are used here only to describe compatibility.
+- The application icon and other brand assets.
+
+You may NOT:
+
+- Use any listed name or logo as the name, branding, domain name, or logo of
+  your own project, product, or service.
+- Use them in a way that suggests sponsorship, endorsement, affiliation with,
+  or origin from the original author, unless you have prior written permission.
+
+You MAY (without permission):
+
+- State factually that your work is "based on opencode-OPS-dash by Yiyazadxr,"
+  or otherwise give accurate attribution to the original author.
+- Retain the original copyright and license notices as required by the MIT
+  License.
+
+For permission to use the brand names or logos, contact the owner at the address
+above.
+
+--------------------------------------------------------------------------------
+6. Distribution notes
+--------------------------------------------------------------------------------
+
+- The repository contains no credentials, no tokens and no captured runtime
+  data. The OpenCode service password is read at runtime from the user's own
+  OpenCode installation and never leaves the bridge process.
+- The bridge binds to 127.0.0.1 and is read-only. A modified copy that binds to
+  a non-loopback address is not covered by the security model described in
+  SECURITY.md.

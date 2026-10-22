@@ -1,0 +1,74 @@
+# 依赖
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+
+# 构建与打包产物
+dist/
+build/
+out/
+*.tgz
+*.tar.gz
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 运行时与缓存
+.cache/
+.temp/
+tmp/
+*.pid
+*.seed
+*.pid.lock
+
+# 环境与本地配置（可能含凭据，严禁提交）
+.env
+.env.*
+!.env.example
+*.local
+*.local.json
+service.json
+.opencode/
+
+# 真实运行数据快照（可能含路径、命令、会话内容）
+snapshot.json
+data.json
+*.snapshot.json
+
+# 编辑器与 IDE
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# 调试
+debug.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.pnpm-debug.log*
+
+# 覆盖率与测试产物
+coverage/
+.nyc_output/
+*.lcov

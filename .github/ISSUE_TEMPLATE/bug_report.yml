@@ -1,0 +1,73 @@
+name: Bug 报告 / Bug report
+description: 指标、任务流、抽屉或启动流程异常；请先对照 README 的「运行」与「交互」
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请勿粘贴 OpenCode 服务密码、`service.json` 内容或完整会话正文。
+        Do not paste the OpenCode service password, `service.json` contents or full session text.
+        You can also write the report in English.
+  - type: dropdown
+    id: start-method
+    attributes:
+      label: 启动方式 / How did you start it
+      options:
+        - 双击 start-dashboard.cmd
+        - 手动运行 node server.mjs
+        - 其他方式 / other
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      description: OpenCode 版本、Node 版本、操作系统与浏览器
+      placeholder: 例：OpenCode 2.x · Node 24 · Windows 11 · Edge 141
+    validations:
+      required: true
+  - type: dropdown
+    id: data-state
+    attributes:
+      label: 数据状态 / Data state
+      description: 页面右下角角标显示的状态
+      options:
+        - LIVE（真实数据 / live）
+        - 最后快照，已过期 / stale snapshot
+        - 模拟数据 / simulated
+        - 完全空白 / blank
+        - 不确定 / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      placeholder: |
+        1. 启动 OpenCode 服务
+        2. 双击 start-dashboard.cmd
+        3. 点击任务流中的某一条
+        4. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果 / Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果 / Actual
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志 / Logs（可选 / optional）
+      description: 浏览器 F12 → Console，以及桥接终端输出。粘贴前请删掉路径、标题等隐私信息
+      render: text
+    validations:
+      required: false
