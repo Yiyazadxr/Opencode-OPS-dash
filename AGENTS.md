@@ -84,6 +84,9 @@ opencode-dash.html（同源，127.0.0.1:8773）
 - 页面内联脚本受 CSP 约束，**不能写内联 `style` 属性**，宽度等用 CSSOM（`el.style.width = …`）设置
 - `start-dashboard.cmd` 只结束占用端口的 **node** 进程，不误伤其他程序
 - 端口被 TIME_WAIT 残留占用时，桥接每 2 秒自动重试（最多 60 次）
+- `buildSnapshot()` 带 1.5s 单飞缓存，重复请求不会重复采集；改采集逻辑请改 `buildSnapshotUncached()`
+- SSE 代理**不能**用超时信号中止上游事件流，只能用可控 `AbortController`；断线后 2 秒退避重连，恢复时发 `bridge.ready`
+- 缓存 key 会随时间变化时（例如滚动窗口起点）必须按分钟对齐，否则缓存永不命中、key 还会无限积累
 
 ## 验证
 
